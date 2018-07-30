@@ -1,21 +1,17 @@
-h1 Listing categories
-
-table
-  thead
-    tr
-      th Name
-      th
-      th
-      th
-
-  tbody
-    - @categories.each do |category|
+h1.text-center.my-5
+  strong Listing categories
+.row
+  table.table.table-hover.col-md-5.mx-auto.mt-5
+    thead.thead-dark
       tr
-        td = category.name
-        td = link_to 'Show', category
-        td = link_to 'Edit', edit_category_path(category)
-        td = link_to 'Destroy', category, data: { confirm: 'Are you sure?' }, method: :delete
-
-br
-
-= link_to 'New Category', new_category_path
+        th Name
+        th Products
+        th
+        th
+    tbody
+      - @categories.each do |category|
+        tr
+          td.col-8 = link_to category.name, category
+          td.col-2 = category.products.count
+          td.col-1 = link_to 'Edit', edit_category_path(category), class: 'btn btn-primary button-size float-right'
+          td.col-1 = link_to 'Destroy', category, data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-danger button-size'

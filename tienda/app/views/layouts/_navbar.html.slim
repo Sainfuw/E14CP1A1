@@ -1,0 +1,10 @@
+.container
+  nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+    button.navbar-toggler aria-controls="navbarNavDropdown" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarNavDropdown" data-toggle="collapse" type="button"
+      span.navbar-toggler-icon
+    #navbarNavDropdown.navbar-collapse.collapse
+      ul.navbar-nav.ml-auto
+        li class=("#{'active' if current_page?(categories_path)}")
+          a.nav-link href=categories_path  Index
+        li class=("#{'active' if current_page?(new_category_path)}")
+          a.nav-link href=new_category_path  Add Category
