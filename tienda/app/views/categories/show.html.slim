@@ -5,7 +5,7 @@ h1.text-center.my-5
 .row
   .col-md-3.mx-auto.border.rounded.p-5.mb-5
     h3.mb-5 Add Product:
-    = form_with(model: [@category, Product.new], local: true) do |f|
+    = form_with(model: [@category, @product], local: true) do |f|
       = f.hidden_field :category_id, value: @category.id
       .form-group.row
         = f.label :name, class: 'col-md-2 col-form-label'
